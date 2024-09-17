@@ -25,7 +25,7 @@ class BahanBakar {
     }
 }
 
-class Pembelian extends BahanBakar {
+class Beli extends BahanBakar {
     private $pajak = 0.10; // PPN 10%
 
     public function hitungTotalHarga() {
@@ -92,14 +92,13 @@ class Pembelian extends BahanBakar {
 
         <?php
         // Buat instance dari class Pembelian
-        $pembelian = new Pembelian();
+        $pembelian = new Beli();
 
-        // Set harga bahan bakar
+        // buat edit harga bahan bakar
         $pembelian->setHarga(15420, 16130, 18310, 16510 );
 
-        // Cek apakah form disubmit
         if (isset($_POST['beli'])) {
-            // Dapatkan data dari form
+            // ini buat dapetin data dari form
             $pembelian->jenisYangDipilih = $_POST['jenis'];
             $pembelian->totalLiter = $_POST['liter'];
 
